@@ -1,7 +1,6 @@
 ﻿using MongoDB.Driver;
 using System;
 using System.Data.SqlClient;
-using System.Text.Encodings.Web;
 using System.Text.Json;
 
 namespace hands_on_console
@@ -39,6 +38,8 @@ namespace hands_on_console
                 WriteIndented = true
             };
 
+            Console.WriteLine("\nMongoDB:");
+            Console.WriteLine("=========================================\n");
             Console.WriteLine(JsonSerializer.Serialize(eventsList, options));
         }
 
@@ -55,7 +56,7 @@ namespace hands_on_console
                 };
 
                 using SqlConnection connection = new SqlConnection(builder.ConnectionString);
-                Console.WriteLine("\nQuery data example:");
+                Console.WriteLine("\nSQL Server:");
                 Console.WriteLine("=========================================\n");
 
                 connection.Open();
